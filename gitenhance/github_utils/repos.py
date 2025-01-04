@@ -1,4 +1,5 @@
 from .bootstrap import gh
+from utils.notifications import Notification
 
 class Repositories:
     def __self__(self):
@@ -6,6 +7,7 @@ class Repositories:
 
     def print_all_user_repos(self):
         print("Getting user repositories...")
+        notification = Notification()
         user_repositories = []
 
         for repo in gh.get_user().get_repos():
@@ -13,5 +15,6 @@ class Repositories:
         gh.close()
 
         print(user_repositories)
+        notification.notify_success_sound()
         return user_repositories
 
