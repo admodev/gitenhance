@@ -9,9 +9,11 @@ token_file_bytes_size = 50
 
 try:
     token_file = os.open(token_path, os.O_RDONLY)
-    token = os.read(token_file, token_file_bytes_size)
-    auth = Auth.Token(str(token))
+    token = os.read(token_file, token_file_bytes_size).decode('utf-8').strip()
+    
     os.close(token_file)
+    
+    auth = Auth.Token(token)
 except FileNotFoundError:
     print(f"Error: GitHub token file not found at {token_path}")
     raise

@@ -7,7 +7,7 @@ from utils.colors import bcolors
 # CMD Line Args
 arguments_list = sys.argv[1:]
 options = "rmph:"
-long_options = ["Release", "Merge", "Pull", "Repos", "Help"]
+long_options = ["Release", "Merge", "Pull", "Repos=", "Help"]
 
 def print_help():
     print(f"{bcolors.HEADER}-- -- -- -- -- -- -- -- Gitenhance -- -- -- -- -- -- -- -- Help -- -- -- -- -- -- -- -- -- -- -- -- --{bcolors.ENDC}")
@@ -31,7 +31,10 @@ try:
         elif current_argument in ("-p", "--Pull"):
             print("Pulling latest changes...")
         elif current_argument in ("--Repos"):
-            github_repositories.print_all_user_repos()
+            if current_value == "list":
+                github_repositories.print_all_user_repos()
+            elif current_value == "create":
+                print("Creating repository...")
         elif current_argument in ("-h", "--Help"):
             print_help()
 
