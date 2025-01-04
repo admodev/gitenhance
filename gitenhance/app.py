@@ -1,12 +1,13 @@
 import getopt, sys
 
-from github.bootstrap import Octokit
+from github_utils.repos import Repositories
+
 from utils.colors import bcolors
 
 # CMD Line Args
 arguments_list = sys.argv[1:]
-options = "rmph:"
-long_options = ["Release", "Merge", "Pull", "Help"]
+options = "rmph[lr]:"
+long_options = ["Release", "Merge", "Pull", "ListRepos", "Help"]
 
 def print_help():
     print(f"{bcolors.HEADER}-- -- -- -- -- -- -- -- Gitenhance -- -- -- -- -- -- -- -- Help -- -- -- -- -- -- -- -- -- -- -- -- --{bcolors.ENDC}")
@@ -18,6 +19,8 @@ def print_help():
     print("{bcolors.HEADER}-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --{bcolors.ENDC}")
 
 try:
+    github_repositories = Repositories()
+
     arguments, values = getopt.getopt(arguments_list, options, long_options)
 
     for current_argument, current_value in arguments:
@@ -27,6 +30,8 @@ try:
             print("Merging code...")
         elif current_argument in ("-p", "--Pull"):
             print("Pulling latest changes...")
+        elif current_argument in ("-lr", "--List-Repos"):
+            github_repositories.print_all_user_repos()
         elif current_argument in ("-h", "--Help"):
             print_help()
 

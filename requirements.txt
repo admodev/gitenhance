@@ -2,9 +2,11 @@ atlassian-python-api==3.41.16
 beautifulsoup4==4.12.3
 black==24.10.0
 certifi==2024.12.14
+cffi==1.17.1
 chardet==4.0.0
 charset-normalizer==3.4.1
 click==8.1.8
+cryptography==44.0.0
 Deprecated==1.2.15
 ecdsa==0.14.1
 greenlet==3.1.1
@@ -14,12 +16,14 @@ msgpack==1.1.0
 mypy-extensions==1.0.0
 neovim==0.3.1
 oauthlib==3.2.2
-octokitpy==0.15.0
-octokitpy-routes==2.5.0
 packaging==24.2
 pathspec==0.12.1
 platformdirs==4.3.6
 pyasn1==0.6.1
+pycparser==2.22
+PyGithub==2.5.0
+PyJWT==2.10.1
+PyNaCl==1.5.0
 pynvim==0.5.2
 python-gitlab==5.3.0
 python-jose==3.2.0
@@ -29,5 +33,6 @@ requests-toolbelt==1.0.0
 rsa==4.9
 six==1.17.0
 soupsieve==2.6
+typing_extensions==4.12.2
 urllib3==1.26.20
 wrapt==1.17.0
