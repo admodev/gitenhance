@@ -1,6 +1,8 @@
 import chime
 
-class Notification:
+from plyer import notification
+
+class TerminalNotification:
     def __init__(self):
         self.theme = 'big-sur'
 
@@ -9,7 +11,12 @@ class Notification:
         getattr(chime, sound_type)()
 
     def notify_success(self):
-        return self._play_sound('success')
+        self._play_sound('success')
+        notification.notify(
+                title = "Success!",
+                message = "Everything is ok.",
+                timeout = 3
+        )
 
     def notify_info(self):
         return self._play_sound('info')
