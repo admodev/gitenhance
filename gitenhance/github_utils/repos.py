@@ -15,6 +15,6 @@ class Repositories:
         gh.close()
 
         print(user_repositories)
-        notification.notify_success_sound()
+        notification.notify_success()
         return user_repositories
 
