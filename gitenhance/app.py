@@ -16,7 +16,7 @@ def print_help():
     print("gitenhance -m or --Merge <destination_branch>")
     print("To pull the latest changes from remote selected branch run the program with the -p or --Pull flag")
     print("To print this help message again, just use the -h or --Help flag.")
-    print("{bcolors.HEADER}-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --{bcolors.ENDC}")
+    print(f"{bcolors.HEADER}-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --{bcolors.ENDC}")
 
 try:
     github_repositories = Repositories()
